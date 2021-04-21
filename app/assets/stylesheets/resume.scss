@@ -56,9 +56,8 @@ body {
   margin-bottom: 5px;
 }
 .text {
-  width: 78vw;
+  width: 69vw;
   min-width: 250px;
-  height: 75vh;
   padding: 30px 30px 0;
   background: #111a21;
   color: #716b6d;
@@ -112,25 +111,4 @@ animation-timing-function: linear;
     to {
         transform:rotate(360deg);
     }
-}
-.section_two {
-  background: #6091ab;
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  margin: 0;
-}
-.two {
-  width: 78vw;
-  min-width: 250px;
-  height: 75vh;
-  padding: 30px;
-  background: #111a21;
-  color: #716b6d;
-  font-size: x-large;
-  border: #716b6d;
-  border-style: solid solid hidden;
-  border-radius: 10% 10% 0 0;
-  display: flex;
-  flex-direction: column;
 }
