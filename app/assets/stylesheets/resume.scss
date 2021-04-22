@@ -86,14 +86,19 @@ body {
   width: 30vw;
   min-width: 200px;
   height: auto;
-  border: 20px solid white;
   border-radius: 10%;
   margin-bottom: 5px;
+  padding: 30px;
   box-shadow: 8px 8px 20px rgba(0, 0, 0, 0.5);
 }
 // Individual .battles images
 .maxscreen {
   height: 50vh;
+  background: white;
+}
+.gamescreenlayout {
+  height: 45vh;
+  background: black;
 }
 
 //// The Text Box Section
@@ -127,11 +132,7 @@ body {
 }
 
 // Images inside the textbox
-.gamescreenlayout {
-  border: 0;
-  border-radius: 0;
-  width: 100%;
-}
+
 
 //// Styling Modifiers
 .headshot, .text {
