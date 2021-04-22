@@ -1,7 +1,7 @@
-<!-- Top Of Page -->
+<!-- Welcome Screen -->
 <div class="section intro">
   <div class="header my_name">
-    <h1>Sean Lenhart</h1>
+    <h1 id="opening">Sean Lenhart</h1>
   </div>
   <div class="main_container">
     <div class="img_container">
@@ -17,35 +17,64 @@
       <p>I like to communicate with an audience, to interact with other players, to find interesting and unique ways to solve problems.</p><br>
       <div class="magic_container">In other words, I have a strong desire to <div class="magic"><em>express myself.</em></div></div><br>
       <p>Let me take you through some of the Projects I have created while attending Academy Pittsburgh and learning the Ruby Programming Language. If you want to dive right into my github you can do so <a href="https://github.com/proto-zero/Projects" target="_blank">here</a>. </p><br>
+  <!-- ADD LINKS TO THE SECTIONS ON THE PAGE -->
+      <p><a href="#rpg"><strong>Battle Fantasy</strong></a> - A Turn-Based RPG Battle System</p>
+      <p><strong>Garden Box</strong> - A calculator with stylish visuals</p>
+      <p><strong>Starship Bridge</strong> - A Starship Bridge Simulator</p>
     </div>
   </div>
 </div>
 
 <!-- RPG -->
+<!-- Section: Top -->
 <div class="section rpg">
   <div class="header rpg_title">
-    <h1><a href="https://github.com/proto-zero/Projects/tree/main/battle_fantasy" target="_blank">Battle Fantasy</a></h1>
-    <p>In the style of a turn-based RPG</p>
+    <h1 id="rpg"><a href="https://github.com/proto-zero/Projects/tree/main/battle_fantasy" target="_blank">Battle Fantasy</a></h1>
+    <p>A Turn-Based RPG Battle System</p>
   </div>
   <div class="main_container">
     <div class="img_container">
-      <%= image_tag("battle_maxscreen.png", :class => "battle maxscreen") %>
+      <%= image_tag("battle_start.png", :class => "battle start term") %>
+      <%= image_tag("battle_maxscreen.png", :class => "battle maxscreen term") %>
     </div>
     <div class="text rpg_description">
       <p><a href="https://github.com/proto-zero/Projects/tree/main/battle_fantasy" target="_blank">Battle Fantasy</a> is what happens when you play Final Fantasy X during breaks in Academy Pittsburgh.</p><br>
       <%= image_tag("ffxmenu.png", :class => "ffxmenu") %><br>
       <p>In most turn-based role-playing-games, when you encounter an enemy, you are given a menu that includes things like health, status, and a list of actions that you can perform.</p><br>
-      <p>I find I enjoy creating menus in the terminal; trying to create a loop that changes just enough to modify the menu but not break it. I enjoy the illusion of making a repeating set of strings that looks like a static page.</p><br>
+      <p>I find I enjoy creating menus in the terminal; trying to create a loop that changes just enough to modify the menu but not break it. I enjoy the illusion of making a repeating set of strings that looks like a static page.</p>
     </div>
   </div>
 </div>
+
+<!-- Section: Game Screen Layout -->
 <div class="section rpg">
   <div class="main_container">
     <div class="img_container">
-      <%= image_tag("battle_gamescreenlayout.png", :class => "battle gamescreenlayout") %>
+      <%= image_tag("battle_gamescreenlayout.png", :class => "battle gamescreenlayout code") %>
     </div>
     <div class="text rpg_description">
-      <p>For this project I started with creating the menu screen.</p><br>
+      <p>For this project I started with creating the menu screen. I interpolated the variables into the strings to help with the spacing on the screen. Ending the screen using print allowed the user input to appear, rather than beneath the menu, in the same line as ACTION. It gives the user a sense that they are typing inside the program instead of manipulating it from the outside.</p><br>
+      <p>The menu has been refined as more features have been added. Having it exist as its own method made implementing changes easy to track inside the code stack.</p>
+    </div>
+  </div>
+</div>
+
+<!-- Section: Game Logic -->
+<div class="section rpg">
+  <div class="main_container">
+    <div class="img_container">
+      <%= image_tag("battle_gamelogic.png", :class => "battle gamelogic code") %>
+    </div>
+    <div class="text rpg_description">
+      <p>The loop itself is rather clean:</p>
+      <ul>
+        <li>First we run the screen method which includes <code>system("clear")</code> to keep the menu in its position.</li>
+        <li><code>@defense</code> is reset to zero.</li>
+        <li>The user input is accepted and set to downcase. Whatever they choose activates the appropriate method (attack, defend, magic). If their choice isn't recognized their turn is effectively skipped.</li>
+        <li>If the player has dealt enough damage to the enemy (or runs away) the <code>@status</code> text is replaced accordingly. This screen lasts for 2.5 seconds before cutting to the Game Over and Credit Scren.</li>
+        <li>The enemy takes their turn to attack the player.</li>
+        <li>If the enemy deals enough damage to the player then the game ends</li>
+      </ul>
     </div>
   </div>
 </div>
