@@ -4,6 +4,7 @@
 
 body {
   margin: 0;
+  background: #a9081c;
   // background-image: image-url('stick.jpg');
   // background-repeat: no-repeat;
   // background-attachment: fixed;
@@ -25,6 +26,12 @@ body {
 .rpg {
   background: #6091ab;
 }
+.gardenbox {
+  background: #101b37;
+}
+.system_manager {
+  background: #121b22;
+}
 
 //// Header Sections
 .header {
@@ -44,6 +51,18 @@ body {
 }
 .rpg_title a {
   color: #f0ba70;
+}
+.gb_title {
+  color: #01c8ee;
+}
+.gb_title a {
+  color: #e41376;
+}
+.starship_title {
+  color: #b94a3e;
+}
+.starship_title a {
+  color: #b94a3e;
 }
 
 //// Content below the Header Section
@@ -102,13 +121,35 @@ body {
 .term {
   background: white;
 }
+.gb {
+  background: black;
+  width: 30vw;
+  min-width: 200px;
+  height: auto;
+  border-radius: 10%;
+  margin-bottom: 5px;
+  padding: 30px;
+  border: 2px solid #e41376;
+  box-shadow: 8px 8px 20px rgba(0, 0, 0, 0.5);
+}
+.starship {
+  background: #782d2d;
+  width: 30vw;
+  min-width: 200px;
+  height: auto;
+  border-radius: 10%;
+  margin-bottom: 5px;
+  padding: 30px;
+  border: 2px solid #204254;
+  box-shadow: 8px 8px 20px rgba(0, 0, 0, 0.5);
+}
 // Individual .battles images
-.maxscreen {
-  height: 50vh;
-}
-.gamescreenlayout {
-  height: 45vh;
-}
+// .maxscreen {
+//   height: 50vh;
+// }
+// .gamescreenlayout {
+//   height: 45vh;
+// }
 
 //// The Text Box Section
 .text {
@@ -141,6 +182,21 @@ body {
 .rpg_description code {
   border: 1px solid #dbc7b5;
   border-style: hidden hidden solid;
+}
+.rpg_description a {
+  color: #dbc7b5;
+}
+.gb_description {
+  min-width: 250px;
+  background: #01c8ee;
+  border: 2px solid #e41376;
+  color: #101b37;
+}
+.bridge_description {
+  min-width: 250px;
+  background: #204254;
+  border: 2px solid #b94a3e;
+  color: #b94a3e;
 }
 
 //// Styling Modifiers
