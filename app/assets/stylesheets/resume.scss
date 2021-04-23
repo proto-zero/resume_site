@@ -240,3 +240,18 @@ animation-timing-function: linear;
         transform:rotate(360deg);
     }
 }
+
+//// Footer
+footer {
+  height: 10vh;
+  background: #a9081c;
+  color: #111a21;
+  border-top: 2px solid white;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 15px;
+}
+footer a {
+  color: #111a21;
+}
