@@ -211,7 +211,7 @@ p {
   margin: 0;
 }
 h2 {
-  margin: 0 0 10px 0;
+  margin-bottom:10px;
 }
 
 //// Maaaaaaaaagic...!
@@ -247,7 +247,7 @@ footer {
   height: 10vh;
   background: #a9081c;
   color: #111a21;
-  border-top: 2px solid white;
+  border-top: 10px dashed #121b22;
   display: flex;
   justify-content: space-around;
   align-items: center;
