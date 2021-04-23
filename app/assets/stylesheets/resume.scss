@@ -36,7 +36,8 @@ body {
 //// Header Sections
 .header {
   width: 100vw;
-  height: 20vh;
+  height: 10vh;
+  min-height: 150px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -68,7 +69,6 @@ body {
 //// Content below the Header Section
 .main_container {
   width: 90vw;
-  min-width: 375px;
   padding: 10px;
   display: flex;
   justify-content: center;
@@ -82,14 +82,15 @@ body {
   flex-direction: column;
   align-items: center;
   text-align: center;
-  font-size: large;
 }
 .img_container p {
   border: 2px solid #716b6d;
   background: #111a21;
   width: 50%;
   min-width: 120px;
-  margin: 10px 5px 5px 15px;
+  font-size: large;
+  //margin: 10px 5px 5px 15px
+  margin: 5px;
   box-shadow: 8px 8px 20px rgba(0, 0, 0, 0.5);
 }
 .img_container a {
@@ -99,16 +100,15 @@ body {
 // Main Specs for Images
 .headshot {
   width: 30vw;
-  min-width: 100px;
+  min-width: 50px;
   height: auto;
   border: 2px solid white;
   border-radius: 10%;
-  margin-bottom: 5px;
   box-shadow: 8px 8px 20px rgba(0, 0, 0, 0.5);
 }
 .battle {
   width: 30vw;
-  min-width: 200px;
+  min-width: 50px;
   height: auto;
   border-radius: 10%;
   margin-bottom: 5px;
@@ -124,7 +124,7 @@ body {
 .gb {
   background: black;
   width: 30vw;
-  min-width: 200px;
+  min-width: 50px;
   height: auto;
   border-radius: 10%;
   margin-bottom: 5px;
@@ -135,7 +135,7 @@ body {
 .starship {
   background: #782d2d;
   width: 30vw;
-  min-width: 200px;
+  min-width: 50px;
   height: auto;
   border-radius: 10%;
   margin-bottom: 5px;
@@ -154,6 +154,7 @@ body {
 //// The Text Box Section
 .text {
   width: 69vw;
+  min-width: 200px;
   padding: 30px;
   font-size: x-large;
   border-radius: 10%;
@@ -165,7 +166,7 @@ body {
   color: #a9081c
 }
 .bio {
-  min-width: 250px;
+  // min-width: 250px;
   background: #111a21;
   border: 2px solid #716b6d;
   color: #716b6d;
@@ -174,7 +175,7 @@ body {
   color: #a9081c;
 }
 .rpg_description {
-  min-width: 250px;
+  // min-width: 250px;
   background: #dd5146;
   border: 2px solid #dbc7b5;
   color: #dbc7b5;
@@ -187,13 +188,13 @@ body {
   color: #dbc7b5;
 }
 .gb_description {
-  min-width: 250px;
+  // min-width: 250px;
   background: #01c8ee;
   border: 2px solid #e41376;
   color: #101b37;
 }
 .bridge_description {
-  min-width: 250px;
+  // min-width: 250px;
   background: #204254;
   border: 2px solid #b94a3e;
   color: #b94a3e;
