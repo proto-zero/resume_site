@@ -4,13 +4,17 @@
 
 body {
   margin: 0;
+  // background-image: image-url('stick.jpg');
+  // background-repeat: no-repeat;
+  // background-attachment: fixed;
+  // background-size: cover;
 }
 
 //// The Full Background Sections
 .section {
   background: #a9081c;
   display: flex;
-  justify-content: center;
+  align-items: center;
   flex-direction: column;
   margin: 0;
   padding: 0;
