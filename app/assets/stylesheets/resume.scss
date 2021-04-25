@@ -73,7 +73,6 @@ body {
   display: flex;
   justify-content: center;
   align-items: flex-start;
-  border-radius: 10%;
 }
 
 //// Left column Images Section
@@ -84,6 +83,7 @@ body {
   text-align: center;
 }
 .img_container p {
+  border-radius: 35px;
   border: 2px solid #716b6d;
   background: #111a21;
   width: 50%;
@@ -103,14 +103,14 @@ body {
   min-width: 50px;
   height: auto;
   border: 2px solid white;
-  border-radius: 10%;
+  border-radius: 35px;
   box-shadow: 8px 8px 20px rgba(0, 0, 0, 0.5);
 }
 .battle {
   width: 30vw;
   min-width: 50px;
   height: auto;
-  border-radius: 10%;
+  border-radius: 35px;
   margin-bottom: 5px;
   padding: 30px;
   box-shadow: 8px 8px 20px rgba(0, 0, 0, 0.5);
@@ -126,7 +126,7 @@ body {
   width: 30vw;
   min-width: 50px;
   height: auto;
-  border-radius: 10%;
+  border-radius: 35px;
   margin-bottom: 5px;
   padding: 30px;
   border: 2px solid #e41376;
@@ -137,19 +137,12 @@ body {
   width: 30vw;
   min-width: 50px;
   height: auto;
-  border-radius: 10%;
+  border-radius: 35px;
   margin-bottom: 5px;
   padding: 30px;
   border: 2px solid #204254;
   box-shadow: 8px 8px 20px rgba(0, 0, 0, 0.5);
 }
-// Individual .battles images
-// .maxscreen {
-//   height: 50vh;
-// }
-// .gamescreenlayout {
-//   height: 45vh;
-// }
 
 //// The Text Box Section
 .text {
@@ -157,7 +150,7 @@ body {
   min-width: 200px;
   padding: 30px;
   font-size: x-large;
-  border-radius: 10%;
+  border-radius: 35px;
   display: flex;
   flex-direction: column;
   box-shadow: 8px 8px 20px rgba(0, 0, 0, 0.5);
@@ -169,7 +162,7 @@ body {
   // min-width: 250px;
   background: #111a21;
   border: 2px solid #716b6d;
-  color: #716b6d;
+  color: white;
 }
 .bio a {
   color: #a9081c;
@@ -178,14 +171,14 @@ body {
   // min-width: 250px;
   background: #dd5146;
   border: 2px solid #dbc7b5;
-  color: #dbc7b5;
+  color: white;
 }
 .rpg_description code {
   border: 1px solid #dbc7b5;
   border-style: hidden hidden solid;
 }
 .rpg_description a {
-  color: #dbc7b5;
+  color: white;
 }
 .gb_description {
   // min-width: 250px;
@@ -197,7 +190,7 @@ body {
   // min-width: 250px;
   background: #204254;
   border: 2px solid #b94a3e;
-  color: #b94a3e;
+  color: white;
 }
 
 //// Styling Modifiers
@@ -246,7 +239,7 @@ animation-timing-function: linear;
 footer {
   height: 10vh;
   background: #a9081c;
-  color: #111a21;
+  color: white;
   border-top: 10px dashed #121b22;
   display: flex;
   justify-content: space-around;
@@ -254,5 +247,5 @@ footer {
   padding: 15px;
 }
 footer a {
-  color: #111a21;
+  color: white;
 }
