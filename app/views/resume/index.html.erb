@@ -138,6 +138,7 @@
           <li>Lightning stuns the enemy, decreasing the amount of damage they can deal to the player for 2 turns.</li><br>
           <li>Heal restores a random amount of health to the player's health variable.<br>
              The random number is added to a player_hp variable, which is compared to the starting maximum health of the player. If player_hp exceeds the starting health, then the total health refreshed is capped at the maximum amount.</li>
+        </ul>
       </div>
     <div class="img_container">
       <%= image_tag("battle magic", :class => "battle player_magic code") %>
@@ -145,6 +146,85 @@
   </div>
 </div>
 
+<!-- Section: Enemy Turn - Status Effects -->
+<div class="section rpg">
+  <div class="main_container">
+    <div class="img_container">
+      <%= image_tag("status_effects.png", :class => "battle status_effect code") %>
+    </div>
+    <div class="text rpg_description">
+      <div class="subject">
+        <p><strong>Enemy Turn - Status Effects</strong></p><br>
+      </div>
+      <p>Before the enemy gets a chance to attack it must check for any status effects from player magic attacks like burning or electrified.</p><br>
+      <p>The burn or elec variables are increased by 2 each time they are cast. This number is checked and if it is above 0 the appropriate status is applied to the enemy. In this way a magic attack can last multiple turns.</p>
+      <ul>
+        <li>Burn reduces the enemy health by 2 points.</li><br>
+        <li>Elec increases the player defense variable by 2</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<!-- Section: Map Overview -->
+<div class="section rpg">
+  <div class="main_container">
+    <div class="text rpg_description">
+      <div class="subject">
+        <p><strong>World Map</strong></p><br>
+      </div>
+      <p>Once I had the combat section up and running I decided to create a Map the player could move around.</p><br>
+      <p>The player, represented by the X, starts in the middle. An enemy @ is both placed and moves randomly.</p><br>
+      <p>If you can catch the enemy then the game calls the battle menu class and shifts to the combat described above.</p><br>
+    </div>
+    <div class="img_container">
+      <%= image_tag("map_start", :class => "battle map_start term") %>
+    </div>
+  </div>
+</div>
+
+<!-- Section: Map Overview - Setup -->
+<div class="section rpg">
+  <div class="main_container">
+    <div class="img_container">
+      <%= image_tag("map_setup.png", :class => "battle map_setup code") %>
+    </div>
+    <div class="text rpg_description">
+      <div class="subject">
+        <p><strong>Creating the Map - Setup</strong></p><br>
+      </div>
+      <p>The map is created by using a nested loop:</p>
+      <ul>
+        <li>First, an empty array is created.</li><br>
+        <li>Next a loop runs for the size of the map, in this case 10.</li><br>
+        <li>Each row gets a spot in the array, and for each row it is matched with a number of columns, making the array a two-dimensional array.</li><br>
+        <li>Each spot in the array is designated with a * and an empty character for even spacing. I used colorize to create a red tinted map.</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<!-- Section: Map Overview - Drawing -->
+<div class="section rpg">
+  <div class="main_container">
+    <div class="text rpg_description">
+      <div class="subject">
+        <p><strong>Creating the Map - Drawing the Map</strong></p><br>
+      </div>
+      <p>The first part of the Game Logic clears the screen.</p><br>
+      <p>The player and enemy positions are created inside the array. The player is hardcoded in so they appear in the same place every time while the enemy row and column are random.</p></br>
+      <p>To draw the map we use another nested loop.</p>
+      <ul>
+        <li>In order to center the map a number of blank spaces are placed on each line. This is a print function, allowing the next step to appear on the same line.</li><br>
+        <li>Each column spot of the array is printed. Only once every part of that line of the map is printed will a new line be created.</li><br>
+        <li>The loop repeats, drawing each set of columns for the number of rows in the array, ending with a 10x10 grid.</li>
+      </ul>
+    </div>
+    <div class="img_container">
+      <%= image_tag("map_loop", :class => "battle map_loop code") %>
+    </div>
+  </div>
+</div>
 
 <!-- Garden Box -->
 <!-- Section: Top -->
