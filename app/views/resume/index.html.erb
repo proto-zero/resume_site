@@ -52,7 +52,11 @@
 <div class="section rpg">
   <div class="main_container">
     <div class="text rpg_description">
-      <p>For this project I started with creating the menu screen. I interpolated the variables into the strings to help with the spacing on the screen. Ending the screen using print allowed the user input to appear, rather than beneath the menu, in the same line as ACTION. It gives the user a sense that they are typing inside the program instead of manipulating it from the outside.</p><br>
+      <div class="subject">
+        <p><strong>Game Screen Layout</strong></p><br>
+      </div>
+      <p>For this project I started with creating the menu screen.</p><br>
+      <p>I interpolated the variables into the strings to help with the spacing on the screen. Ending the screen using print allowed the user input to appear, rather than beneath the menu, in the same line as ACTION. It gives the user a sense that they are typing inside the program instead of manipulating it from the outside.</p><br>
       <p>The menu has been refined as more features have been added. Having it exist as its own method made implementing changes easy to track inside the code stack.</p>
     </div>
     <div class="img_container">
@@ -68,18 +72,79 @@
       <%= image_tag("battle_gamelogic.png", :class => "battle gamelogic code") %>
     </div>
     <div class="text rpg_description">
+      <div class="subject">
+        <p><strong>Game Logic</strong></p><br>
+      </div>
       <p>The loop itself is rather clean:</p>
       <ul>
-        <li>First we run the screen method which includes <code>system("clear")</code> to keep the menu in its position.</li>
-        <li><code>@defense</code> is reset to zero.</li>
-        <li>The user input is accepted and set to downcase. Whatever they choose activates the appropriate method (attack, defend, magic). If their choice isn't recognized their turn is effectively skipped.</li>
-        <li>If the player has dealt enough damage to the enemy (or runs away) the <code>@status</code> text is replaced accordingly. This screen lasts for 2.5 seconds before cutting to the Game Over and Credit Scren.</li>
-        <li>The enemy takes their turn to attack the player.</li>
-        <li>If the enemy deals enough damage to the player then the game ends</li>
+        <li>First we run the screen method which includes <code>system("clear")</code> to keep the menu in its position.</li><br>
+        <li><code>@defense</code> is reset to zero.</li><br>
+        <li>The user input is accepted and set to downcase. Whatever they choose activates the appropriate method (attack, defend, magic). If their choice isn't recognized their turn is effectively skipped.</li><br>
+        <li>If the player has dealt enough damage to the enemy (or runs away) the <code>@status</code> text is replaced accordingly. This screen lasts for 2.5 seconds before cutting to the Game Over and Credit Scren.</li><br>
+        <li>The enemy takes their turn to attack the player.</li><br>
+        <li>If the enemy deals enough damage to the player then the game ends</li><br>
       </ul>
     </div>
   </div>
 </div>
+
+<!-- Section: Player Turn - Attack -->
+<div class="section rpg">
+  <div class="main_container">
+    <div class="text rpg_description">
+      <div class="subject">
+        <p><strong>Attack</strong></p><br>
+      </div>
+      <p>On the player's turn they have four options: Attack, Defend, Magic, or Run Away.</p><br>
+      <p>When the player chooses to attack the attack method is called. It picks a random number between 0 and 99.</p><br>
+      <p>If the attack number is less than 70 than the attack is successful and a damage variable is created. This is also a random number between 1 and 5. This amount is subtracted from the Enemy Health variable</p><br>
+      <p>If the attack number is less than 18 then it is a critical hit and deals more damage than normal, between 6 and 10.</p><br>
+      <p>Any attack numbers above 70 miss and the enemy does not take damage.</p>
+    </div>
+    <div class="img_container">
+      <%= image_tag("battle attack", :class => "battle attack code") %>
+    </div>
+  </div>
+</div>
+
+<!-- Section: Player Turn - Defend -->
+<div class="section rpg">
+  <div class="main_container">
+    <div class="text rpg_description">
+      <div class="subject">
+        <p><strong>Defend</strong></p><br>
+      </div>
+      <p>If the player chooses to defend then the defense method is called and a defense number is randomly chosen</p><br>
+      <p>90% of the time the player will successfully defend, and a defense variable will populate with a random number between 2 and 4. This number will be deducted from any damage the enemy deals later in the turn. It is then reset back to 0 at the beginning of the loop.</p><br>
+      <p>Of course, defending against an attack can be dangerous, and there is a small chance that the player will stumble, leaving themselves vulnerable to attack. The defense variable is automatically set to -5 which will increase any enemy damage.</p>
+    </div>
+    <div class="img_container">
+      <%= image_tag("battle defend", :class => "battle defend code") %>
+    </div>
+  </div>
+</div>
+
+<!-- Section: Player Turn - Magic -->
+<div class="section rpg">
+  <div class="main_container">
+    <div class="text rpg_description">
+      <div class="subject">
+        <p><strong>Magic</strong></p><br>
+      </div>
+        <p>If the player chooses magic they will have to choose which spell to cast: Fire, Lightning, or Heal.</p><br>
+        <p>Using an each loop, the spells are listed for the player to choose by selecting the corresponding number.</p>
+        <ul>
+          <li>Fire burns the enemy, dealing 2 damage for 2 rounds.</li><br>
+          <li>Lightning stuns the enemy, decreasing the amount of damage they can deal to the player for 2 turns.</li><br>
+          <li>Heal restores a random amount of health to the player's health variable.<br>
+             The random number is added to a player_hp variable, which is compared to the starting maximum health of the player. If player_hp exceeds the starting health, then the total health refreshed is capped at the maximum amount.</li>
+      </div>
+    <div class="img_container">
+      <%= image_tag("battle magic", :class => "battle player_magic code") %>
+    </div>
+  </div>
+</div>
+
 
 <!-- Garden Box -->
 <!-- Section: Top -->
@@ -123,7 +188,7 @@
   Finish adding content for battle fantasy
   Finish adding content for gardenbox
   Finish adding content for starship
-  Organize links like a table of contents
+  + Organize links like a table of contents
   Add separate tabs for full screen images
   Add surprise to body background
   Add links back to Top

@@ -48,7 +48,6 @@ body {
   justify-content: center;
   align-items: center;
   font-size: xx-large;
-  //padding: 0 10px 0;
 }
 .my_name {
   font-size: 3em;
@@ -74,7 +73,6 @@ body {
   width: 35px;
   height: auto;
 }
-
 .rpg_title {
   color: #f0ba70;
 }
@@ -187,6 +185,9 @@ body {
 .text h2 {
   color: #a9081c
 }
+.text .subject {
+  text-align: center;
+}
 .bio {
   // min-width: 250px;
   background: #111a21;
@@ -235,6 +236,7 @@ p {
 h2 {
   margin-bottom:10px;
 }
+
 
 //// Maaaaaaaaagic...!
 .magic {
