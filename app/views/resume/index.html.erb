@@ -136,9 +136,9 @@
         <ul>
           <li>Fire burns the enemy, dealing 2 damage for 2 rounds.</li><br>
           <li>Lightning stuns the enemy, decreasing the amount of damage they can deal to the player for 2 turns.</li><br>
-          <li>Heal restores a random amount of health to the player's health variable.<br>
-             The random number is added to a player_hp variable, which is compared to the starting maximum health of the player. If player_hp exceeds the starting health, then the total health refreshed is capped at the maximum amount.</li>
+          <li>Heal restores a random amount of health to the player's health variable.</li>
         </ul>
+        <p>The healing number is added to a player_hp variable, which is compared to the starting maximum health of the player. If player_hp exceeds the starting health, then the total health refreshed is capped at the maximum amount.</p>
       </div>
     <div class="img_container">
       <%= image_tag("battle magic", :class => "battle player_magic code") %>
@@ -212,16 +212,55 @@
         <p><strong>Creating the Map - Drawing the Map</strong></p><br>
       </div>
       <p>The first part of the Game Logic clears the screen.</p><br>
-      <p>The player and enemy positions are created inside the array. The player is hardcoded in so they appear in the same place every time while the enemy row and column are random.</p></br>
+      <p>The player and enemy positions are created inside the array. The player is hardcoded in so they appear in the same place every time while the enemy row and column are random.</p><br>
       <p>To draw the map we use another nested loop.</p>
       <ul>
         <li>In order to center the map a number of blank spaces are placed on each line. This is a print function, allowing the next step to appear on the same line.</li><br>
         <li>Each column spot of the array is printed. Only once every part of that line of the map is printed will a new line be created.</li><br>
         <li>The loop repeats, drawing each set of columns for the number of rows in the array, ending with a 10x10 grid.</li>
       </ul>
+      <p>Once the map is drawn the player and enemy positions are reset to *s so that way, when they move, they won't leave a trail.</p>
     </div>
     <div class="img_container">
       <%= image_tag("map_loop", :class => "battle map_loop code") %>
+      <%= image_tag("clean_board", :class => "battle clean_board code") %>
+    </div>
+  </div>
+</div>
+
+<!-- Section: Map Overview - Movement -->
+<div class="section rpg">
+  <div class="main_container">
+    <div class="img_container">
+      <%= image_tag("map_movement", :class => "battle map_movement code") %>
+    </div>
+    <div class="text rpg_description">
+      <div class="subject">
+        <p><strong>Movement</strong></p><br>
+      </div>
+      <p>The loop pauses for player input. Using WASD the player may move around the map.</p><br>
+      <p>Each movement key either increases or decreases the value of the corresponding row or column in the array. When the screen redraws the map the player will appear to have moved.</p><br>
+      <p>The enemy moves after the player does, using a random number to decide which direction to travel.</p><br>
+      <p>The game checks that either player or enemy is not already at the edge of the map, and if so will not allow them to move off of the map and out of the range of the array.</p><br>
+      <p>If the player and enemy end their turn with the same row and column coordinates, meaning they land in the same space, the combat menu class is called and battle commences.</p>
+    </div>
+  </div>
+</div>
+
+<!-- Section: RPG Final Thoughts -->
+<div class="section rpg">
+  <div class="main_container">
+    <div class="text rpg_description">
+      <div class="subject">
+        <p><strong>Final Thoughts</strong></p><br>
+      </div>
+      <p>I enjoyed how many different ideas I was able to bring together to make this game:</p>
+      <ul>
+        <li>Building the combat menu as a class with a series of methods</li><br>
+        <li>Requiring the class in the map program, as well as the colorize gem</li><br>
+        <li>Creating a map with icons that both move randomly and with player input</li>
+      </ul>
+      <p>In the future I hope to increase the functionality by having more than one enemy to fight, as well as adding items to the map that may increase player stats in combat.</p>
     </div>
   </div>
 </div>
