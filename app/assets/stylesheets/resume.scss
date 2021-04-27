@@ -145,6 +145,16 @@ body {
 .term {
   background: white;
 }
+// Left Hover
+.start:hover, .maxscreen:hover, .gamelogic:hover, .status_effect:hover, .map_setup:hover, .map_movement:hover {
+  transform: scale(1.5);
+  margin-left: 30px;
+}
+// Right Hover
+.gamescreenlayout:hover, .attack:hover, .defend:hover, .player_magic:hover, .map_start:hover, .map_loop:hover, .clean_board:hover {
+  transform: scale(1.5);
+  margin-right: 30px;
+}
 .gb {
   background: black;
   width: 30vw;
