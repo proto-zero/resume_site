@@ -271,16 +271,114 @@
   </div>
   <div class="main_container">
     <div class="img_container">
-      <%= image_tag("gb_end.png", :class => "gb end") %>
+      <%= image_tag("gb_front.png", :class => "gb end") %>
     </div>
     <div class="text gb_description">
-      <p>This project started off as an assignment in Academy Pittsburgh where we needed to store user information in a database and use it to calculate the area and perimeter of a garden box, then tell the user how many of their choice of crop they can plant within that garden box.</p><br>
+      <p>Prior to creating Battle Fantasy, <a href="https://github.com/proto-zero/Projects/tree/main/garden_box" target="_blank">this project</a> started off as an assignment in Academy Pittsburgh where we needed to store user information in a database and use it to calculate the area and perimeter of a garden box, then tell the user how many of their choice of crop they can plant within that garden box.</p><br>
       <p>I made the project twice:</p>
       <ul>
         <li>The first time I created several arrays populated with several different dialogue options and had the program randomly select the dialogue presented to the user.</li><br>
         <li>The second time around, on a whim, I wanted to drastically change the User Experience from a simple text-based interaction to a more stylish menu.</li>
       </ul>
       <p>What follows is my second attempt.</p>
+    </div>
+  </div>
+</div>
+
+<!-- Section: Database Connection -->
+<div class="section gardenbox">
+  <div class="main_container">
+    <div class="text gb_description">
+      <div class="subject">
+        <p><strong>Setting Up The Database</strong></p><br>
+      </div>
+      <p>I required sqlite3 for my Ruby project.</p><br>
+      <p>Using a SQL SELECT statement, I grabbed everything from the Crops table in my database. Using an each statement, I then pushed the name of each crop and the ID for each row into corresponding arrays for later use.</p>
+    </div>
+    <div class="img_container">
+      <%= image_tag("gb_db01.png", :class => "gb db01 code") %>
+      <%= image_tag("gb_db02.png", :class => "gb db02 code") %>
+    </div>
+  </div>
+</div>
+
+<!-- Section: First Screen -->
+<div class="section gardenbox">
+  <div class="main_container">
+    <div class="img_container">
+      <%= image_tag("gb_firstscreen.png", :class => "gb firstscreen code") %>
+      <%= image_tag("gb_opening.png", :class => "gb opening code") %>
+      <%= image_tag("gb_opening02.png", :class => "gb opening02 code") %>
+    </div>
+    <div class="text gb_description">
+      <div class="subject">
+        <p><strong>The First Screen</strong></p><br>
+      </div>
+      <p>I created the first screen to resemble a menu, much like I would later go on to do with the Battle Fantasy combat menu.</p><br>
+      <p>I set the variable <code>lw</code> to be the line width in order to center the text. If I need to resize the screen I need only change one variable at the top instead of several.</p><br>
+      <p>The loop relies on the conditional <code>if</code> statement to proceed. It asks if length is equal to 0, which at the moment it is not. It then asks if the width is equal to 0. Since it is, it prints the prompt <code> width: </code> to allow the user to respond on the menu itself.</p><br>
+      <p>Once the width is set a few things happen:</p>
+      <ul>
+        <li>the length variable is set to 0, thus allowing the next iteration to access the first <code>if</code> statement.</li><br>
+        <li>the X-Axis is updated with the width.</li>
+      </ul>
+      <p>The user is prompted to give the length of the gardenbox which will update the Y-Axis. The loop is ended and we move on to the second screen.</p>
+    </div>
+  </div>
+</div>
+
+<!-- Section: Second Screen -->
+<div class="section gardenbox">
+  <div class="main_container">
+    <div class="text gb_description">
+      <div class="subject">
+        <p><strong>The Second Screen</strong></p><br>
+      </div>
+      <p>Using the length and width we are now able to determine the size of a grid designed much like the one in the Battle Fantasy Map that was as yet to come, as well as to display the perimer and area of the gardenbox.</p><br>
+      <p>The program draws the map outline of the gardenbox, then asks the user to choose a crop to plant. It uses a <code>join</code> method to display all of the crops from the database previously stored in an array as a single line, spaced out with dashes for style.</p><br>
+
+      <p>The three crops in the database are carrots, corn, and beets. Each takes up a different square footage, meaning there are fewer beets possible to be planted than corn, and fewer still than carrots.</p>
+    </div>
+    <div class="img_container">
+      <%= image_tag("gb_drawmap.png", :class => "gb drawmap code") %>
+      <%= image_tag("gb_secondscreen.png", :class => "gb secondscreen code") %>
+    </div>
+  </div>
+</div>
+
+<!-- Section: Crop Choice -->
+<div class="section gardenbox">
+  <div class="main_container">
+    <div class="img_container">
+      <%= image_tag("gb_middle.png", :class => "gb middle code") %>
+      <%= image_tag("gb_invalid.png", :class => "gb invalid code") %>
+    </div>
+    <div class="text gb_description">
+      <div class="subject">
+        <p><strong>Crop Choice</strong></p><br>
+      </div>
+      <p>The three crops in the database are carrots, corn, and beets. Each takes up a different square footage, meaning there are fewer beets possible to be planted than corn, and fewer still than carrots.</p></br>
+      <p>As a fun bit of style, if the user tries to select a crop that isn't available, the promp displays INVALID, and then asks for their crop choice again. This section is peppered with quick <code>sleep</code> methods to give a more interactive feeling.</p>
+    </div>
+  </div>
+</div>
+
+
+<!-- Section: Crop Math -->
+<div class="section gardenbox">
+  <div class="main_container">
+    <div class="text gb_description">
+      <div class="subject">
+        <p><strong>Crop Math</strong></p><br>
+      </div>
+      <p>Going back to the database, the program grabs the value, or how large a particular crop is. That value is placed in a new variable, <code>crop_amount</code>.</p><br>
+      <p>The crops-per-square-foot is multiplied by the calculated area then rounded down (since you can't plant only a percentage of a crop), giving us the total number of plantable crops.</p><br>
+      <p>The garden box outline is redefined by comparing a variable <code>p</code> to <code>total</code>. While <code>p</code> is less than <code>total</code>, a spot on the grid is filled in with an X.</p><br>
+      <p>Once a column is full it moves to the next available column, filling in each column, row by row, with Xs until the number of planted crops, <code>p</code>, is equal to the <code>total</code>.</p>
+    </div>
+    <div class="img_container">
+      <%= image_tag("gb_cropmath.png", :class => "gb cropmath code") %>
+      <%= image_tag("gb_plantable.png", :class => "gb plantable code") %>
     </div>
   </div>
 </div>
