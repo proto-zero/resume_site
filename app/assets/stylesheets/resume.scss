@@ -146,7 +146,7 @@ body {
   background: white;
 }
 // Left Hover
-.start:hover, .maxscreen:hover, .gamelogic:hover, .status_effect:hover, .map_setup:hover, .map_movement:hover, .firstscreen:hover, .opening:hover, .opening02:hover, .middle:hover, .invalid:hover {
+.start:hover, .maxscreen:hover, .gamelogic:hover, .status_effect:hover, .map_setup:hover, .map_movement:hover, .firstscreen:hover, .opening:hover, .opening02:hover, .middle:hover, .invalid:hover, .thirdscreen:hover, .ending:hover, .menu:hover {
   transform: scale(1.5);
   margin-left: 30px;
 }
@@ -230,6 +230,9 @@ body {
   // min-width: 250px;
   background: #204254;
   border: 2px solid #b94a3e;
+  color: white;
+}
+.bridge_description a {
   color: white;
 }
 
