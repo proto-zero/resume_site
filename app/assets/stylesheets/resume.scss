@@ -139,19 +139,19 @@ body {
   padding: 30px;
   box-shadow: 8px 8px 20px rgba(0, 0, 0, 0.5);
 }
-.code {
-  background: black;
-}
-.term {
-  background: white;
-}
+// .code {
+//   background: black;
+// }
+// .term {
+//   background: white;
+// }
 // Left Hover
 .start:hover, .maxscreen:hover, .gamelogic:hover, .status_effect:hover, .map_setup:hover, .map_movement:hover, .firstscreen:hover, .opening:hover, .opening02:hover, .middle:hover, .invalid:hover, .thirdscreen:hover, .ending:hover, .menu:hover {
   transform: scale(1.5);
   margin-left: 30px;
 }
 // Right Hover
-.gamescreenlayout:hover, .attack:hover, .defend:hover, .player_magic:hover, .map_start:hover, .map_loop:hover, .clean_board:hover, .db01:hover, .db02:hover, .drawmap:hover, .secondscreen:hover, .cropmath:hover, .plantable:hover, {
+.gamescreenlayout:hover, .attack:hover, .defend:hover, .player_magic:hover, .map_start:hover, .map_loop:hover, .clean_board:hover, .db01:hover, .db02:hover, .drawmap:hover, .secondscreen:hover, .cropmath:hover, .plantable:hover, .initialize:hover {
   transform: scale(1.5);
   margin-right: 30px;
 }
@@ -176,6 +176,12 @@ body {
   padding: 30px;
   border: 2px solid #204254;
   box-shadow: 8px 8px 20px rgba(0, 0, 0, 0.5);
+}
+.code {
+  background: black;
+}
+.term {
+  background: white;
 }
 
 //// The Text Box Section
