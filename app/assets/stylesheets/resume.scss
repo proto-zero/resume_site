@@ -42,15 +42,14 @@ body {
   font-size: xx-large;
 }
 .my_name {
+  flex-direction: column;
   font-size: 3em;
   color: #f0ba70;
-  justify-content: space-around;
 }
 .my_name p {
   border-radius: 35px;
   border: 2px solid #716b6d;
   background: #111a21;
-  width: 50%;
   min-width: 120px;
   font-size: large;
   margin: 5px;
@@ -59,16 +58,16 @@ body {
   text-align: center;
 }
 .my_name a {
-  color: white;
+  color: #f0ba70;
 }
-.twitter {
-  width: 35px;
-  height: auto;
-}
-.github {
-  width: 50px;
-  height: auto;
-}
+// .twitter {
+//   width: 35px;
+//   height: auto;
+// }
+// .github {
+//   width: 50px;
+//   height: auto;
+// }
 .rpg_title {
   color: #f0ba70;
 }
