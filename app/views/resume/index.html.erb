@@ -448,21 +448,114 @@
   </div>
 </div>
 
-
 <!-- Section: Main Menu -->
-<!-- Section: Weapons -->
-<!-- Section: Alerts -->
-<!-- Section: Engines - Impulse -->
-<!-- Section: Engines - Warp -->
-<!-- Section: Sensors -->
+<div class="section system_manager">
+  <div class="main_container">
+    <div class="img_container">
+      <%= image_tag("starship_setstatus.png", :class => "starship setstatus code") %>
+      <%= image_tag("starship_mainmenu.png", :class => "starship mainmenu code") %>
+    </div>
+    <div class="text bridge_description">
+      <div class="subject">
+        <p><strong>Main Menu</strong></p><br>
+      </div>
+      <p>After the calibration the user sets up the name of the ship and the captain. The program calls the <code>status</code> method and feeds it the name variables to display at the top of the menu.</p><br>
+      <p>Similarly as above, the screen is written line at a time with intricately spaced text. However, unlike the later programs, this one checks the status of the variables set in the <code>initialize</code> method and displays the corresponding message according to a conditional statement.</p><br>
+      <p>At the end it calls the <code>select</code> method which asks for the user input. The user simply types in the name of the system they want to interact with.</p><br>
+      <p><code>@phasers, @photons, </code>and <code>@shields</code> are simple boolean statements which the user can set to true or false.</p>
+    </div>
+  </div>
+</div>
 
+<!-- Section: Alerts -->
+<div class="section system_manager">
+  <div class="main_container">
+    <div class="text bridge_description">
+      <div class="subject">
+        <p><strong>Alerts</strong></p><br>
+      </div>
+      <p>The first bit of tricky code is the alert system. Instead of immediately changing the menu like with the booleans, this opens a second prompt asking the user what alert status they wish to set.</p><br>
+
+      <p>The user has to type in the full alert status. Nearly all of the user input is put through the <code>.downcase</code> method in order to deal with any capitalization discrepancies. The <code>alerts</code> array is therefore all lowercase, while the prompt is capitalized. In this way I could not simply call the <code>alerts</code> array and display it as a string with a <code>.join</code> method.</p><br>
+      <p>When the user picks an alert status the program calls the main menu again and replaces the top text with the new alert status</p><br>
+      <p>The <code>@alert</code> variable is updated from a blank array to its new value and displayed accordingly.</p>
+    </div>
+    <div class="img_container">
+      <%= image_tag("starship_alerts.png", :class => "starship alerts code") %>
+    </div>
+  </div>
+</div>
+
+<!-- Section: Engines - Impulse -->
+<div class="section system_manager">
+  <div class="main_container">
+    <div class="img_container">
+      <%= image_tag("starship_impulse.png", :class => "starship impulse code") %>
+    </div>
+    <div class="text bridge_description">
+      <div class="subject">
+        <p><strong>Impulse Engines</strong></p><br>
+      </div>
+      <p>Like the alerts, when the user selects engines it prompts them to specify between Impulse and Warp Engines.</p><br>
+      <p>The Impulse Engines work just like the alerts, calling the main menu, changing the top text, and updating the @ variable.
+    </div>
+  </div>
+</div>
+
+<!-- Section: Engines - Warp -->
+<div class="section system_manager">
+  <div class="main_container">
+    <div class="text bridge_description">
+      <div class="subject">
+        <p><strong>Warp Engines</strong></p><br>
+      </div>
+      <p>For the Warp engines I set a variable <code>warp</code> as a range between 1 and 9. The program asks the user for a specific warp speed and checks their response against that range.</p>
+    </div>
+    <div class="img_container">
+      <%= image_tag("starship_warp.png", :class => "starship warp code") %>
+    </div>
+  </div>
+</div>
+
+<!-- Section: Sensors -->
+<div class="section system_manager">
+  <div class="main_container">
+    <div class="img_container">
+      <%= image_tag("starship_sensors.png", :class => "starship sensors code") %>
+    </div>
+    <div class="text bridge_description">
+      <div class="subject">
+        <p><strong>Sensors</strong></p><br>
+      </div>
+      <p>At the time the sensors were the trickiest bit of code I had ever made on my own.</p><br>
+      <p>Using the <code>.each</code> method I list each of the possible ship sensors for the user.</p><br>
+      <p>In order to check the user response against the <code>sensorlist</code> I split the response string, mapped it to a new array, capitalized the array, then joined it all back together with spaces. In this way I can take whatever capitalization the user typed and let it match the <code>sensorlist</code> without having to resort to having an all lowercase array and typing it out a second time capitalized for the user prompt (like with the alerts).</p><br>
+      <p>While I don't have the exact source, this was an answer I found online and fit to work on my project.</p><br>
+      <p>One neat thing is that, unlike the other ship's systems, the user can set more than one sensor to be active at a time. The selected sensor is pushed to the <code>@sensors</code> array in the main menu, or deleted from the array when deactivated.</p>
+    </div>
+  </div>
+</div>
+
+<!-- Final Thoughts -->
+<div class="section system_manager">
+  <div class="main_container">
+    <div class="text bridge_description">
+      <div class="subject">
+        <p><strong>Final Thoughts</strong></p><br>
+      </div>
+      <p>I like that I created a loop over the whole program without using a <code>while</code> statement, instead calling new methods which in turn called the main menu when they completed. It's not how I would go on to learn loops, but at the time, for something as sophisticated as this program was, it felt like a real achievement.</p><br>
+      <p>I'm also proud of  promping the user on which systems they may interact with, and then allowing them to type in full sentences if they wish. Using the <code>.include?</code> method lets the program scan the user response for the prompted keywords like phasers or engines and react appropriately. It's just another way of creating immersion for the user.</p><br>
+      <p>Inside every user input is the possibility that they will pick an option that is unavailable. I enjoyed creating while loops in every user response that checked the user response against all valid responses and would return a Command Not Recognized error to the user before allowing them to choose again. The loop would only break once they selected something the program could proceed with.</p><br>
+      <p>The thorough use of documentation was immensely helpful while developing this project. While at the time I only knew to use comments as section headings, I know enjoy using them as notes, placeholders, and instructions.</p>
+    </div>
+  </div>
+</div>
 
 
 
 
 <!-- TO DO
   Create alts and descriptions for better accessibility
-  Finish adding content for starship
   Add separate tabs for full screen images
   Add surprise to body background
   Add links back to Top
@@ -482,4 +575,5 @@
   + Organize links like a table of contents
   + Finish adding content for gardenbox
   + Finish adding content for battle fantasy
+  + Finish adding content for starship
   -->

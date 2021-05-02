@@ -146,12 +146,12 @@ body {
 //   background: white;
 // }
 // Left Hover
-.start:hover, .maxscreen:hover, .gamelogic:hover, .status_effect:hover, .map_setup:hover, .map_movement:hover, .firstscreen:hover, .opening:hover, .opening02:hover, .middle:hover, .invalid:hover, .thirdscreen:hover, .ending:hover, .menu:hover {
+.start:hover, .maxscreen:hover, .gamelogic:hover, .status_effect:hover, .map_setup:hover, .map_movement:hover, .firstscreen:hover, .opening:hover, .opening02:hover, .middle:hover, .invalid:hover, .thirdscreen:hover, .ending:hover, .menu:hover, .setstatus:hover, .mainmenu:hover, .impulse:hover, .sensors:hover {
   transform: scale(1.5);
   margin-left: 30px;
 }
 // Right Hover
-.gamescreenlayout:hover, .attack:hover, .defend:hover, .player_magic:hover, .map_start:hover, .map_loop:hover, .clean_board:hover, .db01:hover, .db02:hover, .drawmap:hover, .secondscreen:hover, .cropmath:hover, .plantable:hover, .initialize:hover {
+.gamescreenlayout:hover, .attack:hover, .defend:hover, .player_magic:hover, .map_start:hover, .map_loop:hover, .clean_board:hover, .db01:hover, .db02:hover, .drawmap:hover, .secondscreen:hover, .cropmath:hover, .plantable:hover, .initialize:hover, .alerts:hover, .warp:hover {
   transform: scale(1.5);
   margin-right: 30px;
 }
